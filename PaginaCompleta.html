@@ -1,0 +1,88 @@
+<!DOCTYPE HTML> 
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>pagina completa</title>
+<link rel="stylesheet" href="CSS/STY.CSS">
+<link rel="stylesheet" href="CSS/CUERPO.CSS">
+<style>
+  /* Estilo del mensaje saludador */
+  #saludo {
+    color: limegreen;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<header class="frente">
+  <div class="frog">
+    <img src="IMAGENES/SAPO.png">
+  </div>
+  <h1 class="titulo">TIENDA EL FROG</h1>
+  <div id="saludo"></div> <!-- Aquí aparecerá el mensaje -->
+  <nav>
+    <ul class="navfrog">
+      <li><a href="PRODUCTO.html">PRODUCTOS</a></li>
+      <li><a href="VENTAS.html">VENTAS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="sapote">
+  <section class="sapito">
+    <article>
+      <h2>Tienda de Sapos Exóticos</h2>
+      <p>En nuestra tienda encontrarás una gran variedad de sapos únicos y saludables, 
+      ideales para quienes buscan una mascota diferente y especial. Ofrecemos especies 
+      seleccionadas y cuidadas con esmero, garantizando su bienestar y adaptabilidad. 
+      Ya sea que desees un sapo como compañero curioso, para tu terrario decorativo o como parte de tus prácticas culturales, 
+      aquí encontrarás la opción perfecta. Además, brindamos asesoría sobre
+      cuidados, alimentación y mantenimiento, para que 
+      disfrutes al máximo de tu nuevo amigo anfibio.</p>
+      <p>No te pierdas de esta gran oportunidad de tener tu amigo anfibio
+      <img src="IMAGENES/sapo.jpeg">
+      </p>
+      <ul>
+        <li>Cuidados</li>
+        <li>Alimentación</li>
+      </ul>
+    </article>
+  </section>
+
+  <aside>
+    <h3>Venta de Sapos</h3>
+    <p>¡Adquiere tu sapo pronto! Puedes hacer tu pedido al número de WHATSAPP 7970-0664 o al correo electrónico.</p>
+    <ul>
+      <li>Sapos Gordos</li>
+      <li>Sapos Pequeños</li>
+      <li>Sapos Grandes</li>
+    </ul>
+  </aside>
+</section>
+
+<footer> 
+  <center>Estamos ubicados en Lourdes Colón</center>
+</footer>
+
+<!-- Código JavaScript: MENSAJE SALUDADOR -->
+<script>
+window.onload = function() {
+  let hora = new Date().getHours();
+  let mensaje = "";
+
+  if (hora < 12) {
+    mensaje = "¡Buenos días, amante de los sapos!";
+  } else if (hora < 18) {
+    mensaje = "¡Buenas tardes! Ven a conocer nuestros sapos exóticos.";
+  } else {
+    mensaje = "¡Buenas noches! Los sapos duermen, pero la tienda sigue abierta.";
+  }
+
+  document.getElementById("saludo").textContent = mensaje;
+};
+</script>
+</body>
+</html>

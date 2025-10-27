@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTROS — Página Principal</title>
+
+  <style>
+    /* ====================================================
+       🎨 VARIABLES DE COLOR (colores principales del sitio)
+       ==================================================== */
+    :root {
+      --fondo: #0a0f1f;              /* Fondo oscuro con tono espacial */
+      --azul: #4db8ff;               /* Azul brillante tipo neón */
+      --texto: #fff;                 /* Color blanco para textos */
+      --vidrio: rgba(255, 255, 255, 0.1); /* Fondo translúcido efecto vidrio */
+    }
+
+    /* ====================================================
+       🧱 ESTILO GENERAL DEL CUERPO
+       ==================================================== */
+    body {
+      margin: 0; /* Quita márgenes por defecto */
+      font-family: 'Segoe UI', sans-serif; /* Fuente limpia y moderna */
+      background: var(--fondo) url('IMAGENES/gal2.jpg') center/cover no-repeat; /* Imagen de fondo espacial */
+      color: var(--texto); /* Texto en color blanco */
+    }
+
+    /* ====================================================
+       🔝 ENCABEZADO / HEADER
+       ==================================================== */
+    header {
+	 flex-direction: ; /* "row-reverse" PARA CAMBIAR DE LADO NAV Y LOGO */
+	 
+      display: flex; /* Coloca logo y menú en una misma línea */
+      justify-content: space-between; /* Espacia logo a la izquierda y menú a la derecha */
+      align-items: center; /* Centra verticalmente los elementos */
+      padding: 1rem 2rem; /* Espaciado interno */
+      background: rgba(0, 0, 0, 0.6); /* Fondo negro translúcido */
+      position: sticky; /* El header se mantiene visible arriba al hacer scroll */
+      top: 0;
+      z-index: 1000; /* Se asegura que quede encima del contenido */
+      backdrop-filter: blur(6px); /* Suaviza el fondo cuando hay imagen detrás */
+    }
+
+    /* ====================================================
+       🌟 LOGO
+       ==================================================== */
+    .logo {
+	
+      display: flex; /* Permite alinear imagen + texto si se desea */
+      align-items: right; /* Centra el logo verticalmente */
+      gap: 10px; /* Espacio entre imagen y texto */
+	 
+    }
+
+    .logo img {
+      width: 80px;  /* Tamaño del logo */
+      height: 80px; /* Mantiene proporción cuadrada */
+      object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+	
+    }
+
+    /* Texto del título "ASTROS" al lado del logo */
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--azul);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px var(--azul);
+    }
+
+    /* ====================================================
+       📜 MENÚ DE NAVEGACIÓN
+       ==================================================== */
+    nav ul {
+      list-style: none; /* Quita los puntos de lista */
+      display: flex; /* Pone los enlaces en línea */
+      gap: 2rem; /* Espacio entre los enlaces */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+	
+      color: var(--texto); /* Enlaces blancos */
+      text-decoration: none; /* Sin subrayado */
+      font-weight: bold;
+      transition: 0.3s; /* Transición suave al pasar el ratón */
+    }
+
+    nav a:hover {
+      color: var(--azul); /* Cambia a azul brillante */
+      text-shadow: 0 0 8px var(--azul); /* Brillo azul al pasar el ratón */
+    }
+
+    /* ====================================================
+       🍔 MENÚ HAMBURGUESA (solo para móviles)
+       ==================================================== */
+    .hamburger {
+      display: none; /* Oculto en pantallas grandes */
+      flex-direction: column;
+      cursor: pointer; /* Cursor tipo "mano" */
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background: var(--texto); /* Barras blancas */
+      margin: 4px 0; /* Espaciado entre barras */
+    }
+
+    /* ====================================================
+       🪐 CONTENIDO PRINCIPAL
+       ==================================================== */
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr; /* Dos columnas: contenido + aside */
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    section, aside {
+      background: var(--vidrio); /* Fondo translúcido efecto vidrio */
+      border-radius: 10px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px); /* Suaviza el fondo */
+    }
+
+    h2, h3 {
+      color: var(--azul); /* Títulos en azul brillante */
+      text-shadow: 0 0 10px rgba(77,184,255,0.5);
+    }
+
+    aside {
+      text-align: center;
+    }
+
+    .gif-anuncio {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      animation: flotar 3s ease-in-out infinite; /* Efecto flotante animado */
+    }
+
+    @keyframes flotar {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ====================================================
+       📩 PIE DE PÁGINA
+       ==================================================== */
+    footer {
+      background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+      text-align: center;
+      padding: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      border: none;
+      border-radius: 5px;
+      padding: 0.7rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--texto);
+    }
+
+    button {
+      background: var(--azul);
+      color: #000; /* Texto negro sobre azul */
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #fff;
+      color: var(--azul);
+    }
+
+    /* ====================================================
+       📱 ADAPTACIÓN A CELULARES
+       ==================================================== */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      nav ul.active {
+        display: flex; /* Muestra el menú al hacer clic */
+      }
+
+      .hamburger {
+        display: flex; /* Muestra el ícono en pantallas pequeñas */
+      }
+
+      main {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+      }
+
+      aside {
+        order: -1; /* Mueve el aside arriba */
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- ====================================================
+       🔝 ENCABEZADO CON LOGO Y MENÚ
+       ==================================================== -->
+  <header>
+    <div class="logo">
+      <img src="IMAGENES/log4.gif" alt="Logo Astros">  
+    </div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="#">Información</a></li>
+        <li><a href="pagina%20de%20biografia.html">Créditos</a></li>
+        <li><a href="pagina.html">Más</a></li>
+      </ul>
+
+      <!-- Icono hamburguesa (solo móvil) -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====================================================
+       🪐 CONTENIDO PRINCIPAL
+       ==================================================== -->
+  <main>
+    <div>
+      <section>
+        <h2>El universo</h2>
+        <p>
+          El universo abarca todo lo que existe: materia, energía, planetas, estrellas y galaxias.
+          Se originó hace unos 13.800 millones de años tras el Big Bang y sigue expandiéndose.
+        </p>
+      </section>
+
+      <section>
+        <h2>Los planetas</h2>
+        <p>
+          Los planetas orbitan una estrella. En nuestro sistema solar hay ocho, desde Mercurio hasta Neptuno,
+          cada uno con características únicas y algunos con anillos o lunas.
+        </p>
+      </section>
+    </div>
+
+    <aside>
+      <h3>Espacio publicitario</h3>
+      <img src="IMAGENES/agua.gif" alt="GIF publicitario" class="gif-anuncio">
+    </aside>
+  </main>
+
+  <!-- ====================================================
+       📬 PIE DE PÁGINA
+       ==================================================== -->
+  <footer>
+    <h3>Contáctanos</h3>
+    <form>
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Mensaje..." rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </footer>
+
+  <!-- ====================================================
+       ⚙️ SCRIPT DEL MENÚ HAMBURGUESA
+       ==================================================== -->
+  <script>
+    // Captura los elementos del menú
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    // Evento para abrir/cerrar el menú en móviles
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

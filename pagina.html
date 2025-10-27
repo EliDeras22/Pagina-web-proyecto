@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación del texto para admitir tildes y caracteres especiales -->
+  <title>Página de Astronomía</title>
+
+  <style>
+    /* =====================================================
+       🌌 VARIABLES DE COLOR Y EFECTOS GLOBALES
+       ===================================================== */
+    :root {
+      --fondo: #0a0f1f;                      /* Color de fondo principal (tono oscuro tipo espacio) */
+      --azul: #4db8ff;                       /* Color de acento (usado para títulos y efectos luminosos) */
+      --texto: #fff;                         /* Color base del texto (blanco para contraste) */
+      --vidrio: rgba(255, 255, 255, 0.1);    /* Fondo translúcido que imita el efecto "vidrio esmerilado" */
+    }
+
+    /* =====================================================
+       🪐 ESTILO GENERAL DEL CUERPO
+       ===================================================== */
+    body {
+      margin: 0; /* Quita el margen por defecto del navegador */
+      font-family: 'Segoe UI', sans-serif; /* Fuente moderna y legible */
+      background: var(--fondo) url('IMAGENES/gal3.jpg') center/cover no-repeat;
+      /* Fondo oscuro + imagen de galaxia centrada y ajustada */
+      color: var(--texto); /* Texto blanco */
+      line-height: 1.6; /* Aumenta la separación entre líneas para leer mejor */
+    }
+
+    /* =====================================================
+       🌠 ENCABEZADO PRINCIPAL (TÍTULO Y DESCRIPCIÓN)
+       ===================================================== */
+    header {
+      text-align: center;             /* Centra el texto (título y descripción) */
+      padding: 2rem 1rem;             /* Espaciado interno (arriba/abajo y lados) */
+      background: rgba(0, 0, 0, 0.6); /* Fondo negro translúcido para destacar el texto */
+      backdrop-filter: blur(8px);     /* Aplica un difuminado tipo "vidrio esmerilado" */
+    }
+
+    header h1 {
+      color: var(--azul);                    /* Aplica el color azul al título */
+      margin-bottom: 0.5rem;                 /* Espacio inferior entre el título y el párrafo */
+      text-shadow: 0 0 10px var(--azul);     /* Brillo azul alrededor del texto */
+    }
+
+    /* =====================================================
+       🚀 BARRA DE NAVEGACIÓN SUPERIOR
+       ===================================================== */
+    nav {
+      display: flex;                 /* Activa el modelo flexbox para distribuir los enlaces */
+      justify-content: center;       /* Centra los elementos horizontalmente */
+      gap: 2rem;                     /* Espaciado entre los enlaces */
+      background: rgba(0, 0, 0, 0.7);/* Fondo oscuro translúcido */
+      padding: 1rem;                 /* Espaciado interno del menú */
+      position: sticky;              /* Mantiene el menú visible al hacer scroll */
+      top: 0;                        /* Lo fija en la parte superior de la página */
+      z-index: 100;                  /* Asegura que quede encima de otras secciones */
+    }
+
+    nav a {
+      color: var(--texto);           /* Enlaces en color blanco */
+      text-decoration: none;         /* Quita el subrayado */
+      font-weight: bold;             /* Negrita para destacar */
+      transition: 0.3s;              /* Animación suave al pasar el ratón */
+    }
+
+    nav a:hover {
+      color: var(--azul);            /* Cambia a azul al pasar el cursor */
+      text-shadow: 0 0 8px var(--azul); /* Añade brillo azul al texto */
+    }
+
+    /* =====================================================
+       📱 BOTÓN HAMBURGUESA (solo se muestra en pantallas pequeñas)
+       ===================================================== */
+    .menu-btn {
+      display: none;         /* Oculto por defecto (solo aparece en móviles) */
+      flex-direction: column;/* Las tres líneas se apilan verticalmente */
+      cursor: pointer;       /* Cambia el cursor a "mano" al pasar por encima */
+      position: absolute;    /* Posicionamiento independiente del flujo normal */
+      right: 20px;           /* Lo coloca a 20px del borde derecho */
+      top: 15px;             /* A 15px del borde superior */
+      z-index: 101;          /* Más alto que el menú para ser clickeable */
+    }
+
+    .menu-btn span {
+      height: 3px;           /* Grosor de cada línea */
+      width: 25px;           /* Largo de cada línea */
+      background: var(--texto); /* Color blanco */
+      margin: 4px 0;         /* Espacio entre líneas */
+      border-radius: 2px;    /* Bordes redondeados */
+      transition: 0.3s;      /* Suaviza las animaciones */
+    }
+
+    /* =====================================================
+       🌍 SECCIONES DE CONTENIDO (Cajas con información)
+       ===================================================== */
+    section {
+      max-width: 800px;                 /* Ancho máximo de las secciones */
+      margin: 2rem auto;                /* Centra la sección y añade separación */
+      background: var(--vidrio);        /* Fondo translúcido */
+      padding: 1.5rem;                  /* Espaciado interno */
+      border-radius: 10px;              /* Bordes redondeados */
+      backdrop-filter: blur(10px);      /* Efecto vidrio difuminado */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+    }
+
+    section h2 {
+      color: var(--azul);               /* Títulos azules */
+      text-shadow: 0 0 8px rgba(77, 184, 255, 0.5); /* Brillo suave */
+    }
+
+    section img {
+      display: block;                   /* Hace que la imagen sea un bloque centrado */
+      margin: 1rem auto;                /* Centra horizontalmente */
+      width: 100%;                      /* La imagen ocupa todo el ancho disponible */
+      max-width: 600px;                 /* Pero no sobrepasa los 600px */
+      border-radius: 10px;              /* Bordes redondeados */
+      box-shadow: 0 0 10px rgba(77, 184, 255, 0.3); /* Sombra azulada */
+    }
+
+    ul {
+      list-style: circle;               /* Tipo de viñeta (círculo) */
+      padding-left: 1.5rem;             /* Sangría para las viñetas */
+    }
+
+    li {
+      margin-bottom: 0.5rem;            /* Espacio entre cada elemento de lista */
+    }
+
+    /* =====================================================
+       📲 ADAPTACIÓN A PANTALLAS PEQUEÑAS (Diseño responsive)
+       ===================================================== */
+    @media (max-width: 768px) {
+      /* Las secciones se vuelven más compactas */
+      section {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      /* El menú se vuelve vertical y oculto por defecto */
+      nav {
+        flex-direction: column;   /* Coloca los enlaces uno debajo del otro */
+        align-items: center;      /* Centra los enlaces */
+        gap: 1rem;                /* Espacio entre enlaces */
+        display: none;            /* Oculta el menú hasta que se active */
+      }
+
+      nav.active {
+        display: flex;            /* Aparece cuando el usuario presiona el botón */
+      }
+
+      /* El botón hamburguesa aparece en móviles */
+      .menu-btn {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =====================================================
+       🧭 ENCABEZADO DE LA PÁGINA (Título y subtítulo)
+       ===================================================== -->
+  <header>
+    <h1>Explorando el Cosmos</h1> <!-- Título principal -->
+    <p>Descubre los misterios del universo, las galaxias lejanas y los secretos del espacio profundo.</p>
+  </header>
+
+  <!-- =====================================================
+       🍔 BOTÓN HAMBURGUESA (para menú móvil)
+       ===================================================== -->
+  <div class="menu-btn" id="menu-btn">
+    <!-- Cada "span" es una línea del ícono de menú -->
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- =====================================================
+       🌌 MENÚ DE NAVEGACIÓN PRINCIPAL
+       ===================================================== -->
+  <nav id="menu">
+    <a href="file:///C:/Users/Eli%20Deras/Desktop/HTML%20LUIS%20MARIO/ASTROS.html#">Inicio</a>
+    <a href="#galaxias">Galaxias</a>
+    <a href="#planetas">Planetas</a>
+    <a href="#fenomenos">Fenómenos</a>
+    <a href="#curiosidades">Curiosidades</a>
+  </nav>
+
+  <!-- =====================================================
+       🌠 SECCIONES DE CONTENIDO (Informativas)
+       ===================================================== -->
+  <section id="galaxias">
+    <h2>Las Fascinantes Galaxias</h2>
+    <img src="IMAGENES/galaxia.jpg" alt="Galaxia espiral">
+    <p>Las galaxias son enormes sistemas de estrellas, polvo y gas unidos por la gravedad. Existen miles de millones en el universo, y se clasifican en espirales, elípticas e irregulares.</p>
+    <p>La Vía Láctea es la galaxia donde se encuentra nuestro sistema solar. Se estima que contiene más de 200 mil millones de estrellas.</p>
+  </section>
+
+  <section id="planetas">
+    <h2>El Sistema Solar y los Planetas</h2>
+    <img src="IMAGENES/solar.jpg" alt="Planetas del sistema solar">
+    <p>El sistema solar está compuesto por ocho planetas que orbitan alrededor del Sol. Cada planeta tiene características únicas:</p>
+    <ul>
+      <li><strong>Mercurio:</strong> el más cercano al Sol y el más pequeño.</li>
+      <li><strong>Venus:</strong> similar a la Tierra en tamaño, pero con temperaturas extremas.</li>
+      <li><strong>Tierra:</strong> el único planeta conocido con vida.</li>
+      <li><strong>Marte:</strong> el planeta rojo, potencialmente habitable en el futuro.</li>
+      <li><strong>Júpiter:</strong> el gigante gaseoso más grande del sistema solar.</li>
+      <li><strong>Saturno:</strong> famoso por sus impresionantes anillos.</li>
+      <li><strong>Urano:</strong> tiene una inclinación única y color azul verdoso.</li>
+      <li><strong>Neptuno:</strong> el más lejano, con vientos extremadamente rápidos.</li>
+    </ul>
+  </section>
+
+  <section id="fenomenos">
+    <h2>Fenómenos Cósmicos Sorprendentes</h2>
+    <img src="IMAGENES/agujero.jpg" alt="Ilustración de un agujero negro">
+    <p>El universo está lleno de fenómenos fascinantes:</p>
+    <ul>
+      <li><strong>Supernovas:</strong> explosiones estelares que liberan enormes cantidades de energía.</li>
+      <li><strong>Agujeros negros:</strong> regiones donde la gravedad es tan intensa que nada puede escapar.</li>
+      <li><strong>Púlsares:</strong> estrellas de neutrones que emiten pulsos regulares de radiación.</li>
+      <li><strong>Exoplanetas:</strong> planetas que orbitan otras estrellas, muchos con condiciones similares a la Tierra.</li>
+    </ul>
+  </section>
+
+  <section id="curiosidades">
+    <h2>Curiosidades del Universo</h2>
+    <img src="IMAGENES/universo.jpg" alt="Vista del universo">
+    <p>Algunas curiosidades asombrosas:</p>
+    <ul>
+      <li>La luz del Sol tarda 8 minutos y 20 segundos en llegar a la Tierra.</li>
+      <li>Un día en Venus es más largo que su año.</li>
+      <li>El universo observable tiene un diámetro de 93 mil millones de años luz.</li>
+      <li>Hay estrellas que son millones de veces más grandes que nuestro Sol.</li>
+    </ul>
+  </section>
+
+  <!-- =====================================================
+       ⚙️ SCRIPT PARA EL BOTÓN HAMBURGUESA (interactividad)
+       ===================================================== -->
+  <script>
+    // Selecciona el botón hamburguesa y el menú
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    // Escucha el evento de clic en el botón
+    menuBtn.addEventListener('click', () => {
+      // Alterna la clase "active" en el menú para mostrarlo u ocultarlo
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

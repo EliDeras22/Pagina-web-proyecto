@@ -1,0 +1,54 @@
+.frente {
+	display: flex;
+	justify-content: flex-and;
+	align-items: center;
+	height:85px;
+	padding: 5px 5%;
+	background-color: green;
+}
+
+.frente .frog {
+	margin-right: auto;
+}
+
+.frente .frog img{
+height: 90px;
+width: auto;
+}
+
+.frente .navfrog li {
+	display: inline-block;
+	padding: 0 20px;
+}
+	
+.frente .navfrog a {
+	font-size: 700;
+	color: white;
+	text-decoration: none;
+}
+
+.frente .navfrog li a:hover{
+	color: blue;
+}
+
+.titulo {
+	text-align: center;
+	font-family: wide latin;
+	color: white;
+	padding: 10%;
+}
+.titulo:hover{
+	color: blue;
+}
+
+.navfrog {
+  background-color: green;
+      display: flex;             
+      justify-content: right;    
+      align-items: right;        
+      gap: 50px;                 
+      padding: 15px;}
+	  }
+	  
+	  
+	

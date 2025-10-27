@@ -1,0 +1,63 @@
+/* === CONFIGURACIÓN GENERAL DEL BODY === */
+body {
+    margin: 0; /* Elimina márgenes por defecto del navegador */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible y moderna */
+    background-color: #000000; /* Fondo negro elegante */
+    color: #ccffcc; /* Texto en verde claro */
+    line-height: 1.6; /* Espaciado entre líneas */
+    text-align: center; /* Centra todo el texto por defecto */
+}
+
+/* === ESTILO DEL ENCABEZADO === */
+header {
+    background-color: #003300; /* Verde oscuro */
+    color: #ccffcc; /* Texto claro */
+    padding: 30px;
+    border-bottom: 2px solid #00ff66; /* Línea inferior decorativa */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em; /* Título grande */
+}
+
+/* === SECCIONES DE CONTENIDO === */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    border-bottom: 1px solid #003300;
+}
+
+/* Títulos de las secciones */
+section h2 {
+    color: #66ff66;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* === IMÁGENES CENTRADAS === */
+section img {
+    display: block;        /* Hace que la imagen sea un bloque */
+    margin: 20px auto;     /* Centra horizontalmente */
+    max-width: 100%;       /* Evita que se desborde */
+    height: auto;          /* Mantiene proporciones */
+    border: 2px solid #00cc66; /* Borde verde brillante */
+    border-radius: 10px;   /* Bordes redondeados */
+}
+
+/* === LISTAS SIN PUNTOS Y CENTRADAS === */
+section ul {
+    list-style: none;         /*  Elimina los puntos de la lista */
+    display: inline-block;    /* Permite centrar la lista */
+    text-align: left;         /* Alinea texto de lista a la izquierda */
+    margin: 20px auto;
+    padding-left: 0;          /* Quita sangría por defecto */
+}
+
+/* Espaciado entre elementos de la lista */
+section ul li {
+    margin-bottom: 10px;
+}
+
+

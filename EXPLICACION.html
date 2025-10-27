@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Pagina web interactiva para aprender HTML, CSS y JavaScript para la feria de logros 2025" name="description">
+    <meta content="Antonio Paya Gonzalez, HTML, CSS, JavaScript, Web Development" name="keywords">
+
+    <title>Manual Web Interactivo - Feria de Logros</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* ======================================= */
+        /* 1. VARIABLES GLOBALES (Modo Oscuro Default) */
+        /* ======================================= */
+        :root {
+            --fondo: #121212;
+            --texto: #f0f0f0;
+            --acento: #ff7eb9;
+            --acento-claro: #ffe7f3;
+            --hover: #ffd166;
+            --tarjeta: rgba(255, 255, 255, 0.08);
+            --sombra: rgba(0, 0, 0, 0.5);
+            --codigo: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ======================================= */
+        /* 2. ESTILOS DE MODO CLARO (Se aplica con JS) */
+        /* ======================================= */
+        .light-mode {
+            --fondo: #f0f0f0;
+            --texto: #121212;
+            --tarjeta: rgba(0, 0, 0, 0.05);
+            --sombra: rgba(0, 0, 0, 0.2);
+            --codigo: rgba(0, 0, 0, 0.1);
+        }
+
+        /* ======================================= */
+        /* 3. ESTILOS BASE */
+        /* ======================================= */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+            transition: background 0.5s, color 0.5s;
+            scroll-behavior: smooth;
+        }
+        
+        /* Contenedores */
+        main {
+            padding: 120px 8% 50px; /* Espacio para el header fijo */
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Títulos */
+        h2 {
+            color: var(--acento);
+            border-bottom: 3px solid var(--acento);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        h2 i { margin-right: 10px; font-size: 2rem; }
+        
+        h3 {
+            color: var(--texto);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* Texto y Listas */
+        p { margin-bottom: 15px; font-weight: 300; }
+        ul { padding-left: 20px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+
+        /* ======================================= */
+        /* 4. HEADER Y NAVEGACIÓN */
+        /* ======================================= */
+        header {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 3px solid var(--acento);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px var(--sombra);
+        }
+
+        .light-mode header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 10px var(--sombra);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            /* Efecto gradiente de texto */
+            background: linear-gradient(90deg, var(--acento), var(--hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--texto);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active { 
+            color: var(--acento-claro); 
+        }
+
+        /* Indicador de Hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: var(--hover);
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* ======================================= */
+        /* 5. SECCIONES Y TARJETAS */
+        /* ======================================= */
+        section {
+            background: var(--tarjeta);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 6px 15px var(--sombra);
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .light-mode section {
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Botón de tema */
+        #btnTema {
+            background: transparent;
+            border: 2px solid var(--acento);
+            color: var(--texto);
+            padding: 6px 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+        #btnTema:hover {
+            background: var(--acento);
+            color: var(--texto);
+        }
+
+        /* Botones de acción */
+        button:not(#btnTema) {
+            background: var(--acento);
+            border: none;
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+        button:not(#btnTema):hover {
+            background: var(--hover);
+            box-shadow: 0 0 10px var(--hover);
+        }
+
+        /* Bloque de Código */
+        pre {
+            background: var(--codigo);
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border-left: 5px solid var(--acento);
+            margin-top: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* ======================================= */
+        /* 6. RESPONSIVE (Móviles) */
+        /* ======================================= */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            width: 28px; height: 3px;
+            background: var(--acento);
+            margin: 4px 0;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            header { padding: 15px 5%; }
+            nav { position: static; }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 75px; 
+                right: 0;
+                width: 70%;
+                max-width: 300px;
+                background: var(--fondo);
+                padding: 20px 30px;
+                border-left: 2px solid var(--acento);
+                box-shadow: -4px 4px 10px var(--sombra);
+                gap: 5px;
+                height: 100%;
+            }
+            nav ul.active { display: flex; }
+            nav a { padding: 10px 0; display: block; }
+            nav a::after { display: none; }
+            
+            .menu-toggle { display: flex; }
+            main { padding-top: 100px; }
+        }
+
+        @media (max-width: 600px) {
+             header h1 { font-size: 1.3rem; }
+             main { padding-left: 5%; padding-right: 5%; }
+             h2 { font-size: 1.7rem; }
+             section { padding: 20px; }
+        }
+    </style>
+</head>
+
+<body class="dark-mode"> <header>
+        <h1>Manual Web Interactivo</h1>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <button id="btnTema" title="Cambiar tema">🌗</button>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JavaScript</a></li>
+                <li><a href="#pagina">Creación Web</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#creditos">Créditos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="inicio">
+            <h2><i class='bx bx-code-alt'></i> ¡Bienvenido al Manual Web!</h2>
+            <p>Este es tu punto de partida para aprender los tres pilares de cualquier sitio web moderno: **HTML**, **CSS** y **JavaScript**. En esta guía interactiva, te explicaremos de forma sencilla qué es cada uno y cómo se combinan para crear páginas asombrosas.</p>
+            
+            <h3>¿Qué aprenderás?</h3>
+            <ul>
+                <li>La **estructura** básica de una página web con HTML.</li>
+                <li>Cómo darle **estilo y diseño** profesional con CSS.</li>
+                <li>Cómo añadir **interactividad** y dinamismo con JavaScript.</li>
+            </ul>
+            <p>Usa el menú de navegación para saltar a cualquier sección.</p>
+        </section>
+        
+        <section id="html">
+            <h2><i class='bx bxl-html5'></i> HTML: La Columna Vertebral</h2>
+            <p>HTML (HyperText Markup Language) **no es un lenguaje de programación**. Es un lenguaje de marcado que define la **estructura** y el **contenido** de una página web. Piensa en él como los huesos de un cuerpo.</p>
+
+            <h3>Conceptos Clave</h3>
+            <ul>
+                <li>**Etiquetas ($<...>$):** Son el elemento fundamental. Vienen en pares de apertura y cierre (ej: `<h1>` y `</h1>`), aunque algunas son auto-cerradas (ej: `<img />`).</li>
+                <li>**Elementos:** Es todo el contenido entre la etiqueta de apertura y la de cierre.</li>
+                <li>**Atributos:** Proporcionan información adicional a una etiqueta (ej: `href` en `<a href="...">`).</li>
+            </ul>
+
+            <h3>Ejemplo de Estructura Básica</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Título&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Título Principal&lt;/h1&gt;
+    &lt;p&gt;Este es el contenido de la página.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>🚀 **Tip:** La etiqueta `&lt;head&gt;` contiene información invisible al usuario (metadatos), y `&lt;body&gt;` contiene todo el contenido visible.</p>
+        </section>
+
+        <section id="css">
+            <h2><i class='bx bxl-css3'></i> CSS: La Ropa y Maquillaje</h2>
+            <p>CSS (Cascading Style Sheets) es el lenguaje usado para darle **estilo** a los elementos HTML. Controla el color, las tipografías, los tamaños, el diseño y la posición de todos los elementos. Piensa en CSS como la ropa, los colores y el diseño de la web.</p>
+
+            <h3>Conceptos Clave</h3>
+            <ul>
+                <li>**Selectores:** Indican a qué elemento HTML aplicar el estilo (por etiqueta, clase o ID).</li>
+                <li>**Propiedades y Valores:** Definen el estilo. Por ejemplo: `color: blue;`.</li>
+                <li>**Box Model:** Todo en CSS es una caja. El Box Model define el `margin`, `border`, `padding` y el `content` de esa caja.</li>
+            </ul>
+
+            <h3>Ejemplo de Estilo Básico</h3>
+            <pre><code>/* Selecciona la clase 'caja' */
+.caja {
+    width: 200px;
+    height: 100px;
+    background-color: var(--acento); /* Color de fondo */
+    color: var(--texto);
+    padding: 20px;
+    border-radius: 10px;
+}</code></pre>
+            <p>🎨 **Tip:** Puedes enlazar tu archivo CSS con la etiqueta `&lt;link rel="stylesheet" href="style.css"&gt;` dentro del `&lt;head&gt;` de tu HTML.</p>
+        </section>
+
+        <section id="js">
+            <h2><i class='bx bxl-javascript'></i> JavaScript: El Cerebro</h2>
+            <p>JavaScript (JS) es un **lenguaje de programación** que añade **interactividad** y **dinamismo** a tu sitio. Permite reaccionar a las acciones del usuario, cambiar el contenido o hacer animaciones complejas. Es el cerebro que hace que la web 'funcione'.</p>
+
+            <h3>Conceptos Clave</h3>
+            <ul>
+                <li>**DOM (Document Object Model):** Es la representación del HTML en forma de objetos que JS puede manipular (cambiar texto, añadir clases CSS, etc.).</li>
+                <li>**Eventos:** Son acciones del usuario (un clic, mover el ratón, presionar una tecla) a las que JS puede responder.</li>
+                <li>**Funciones:** Son bloques de código que puedes llamar y reutilizar.</li>
+            </ul>
+
+            <h3>Ejemplo de Interactividad</h3>
+            <pre><code>const boton = document.getElementById('miBoton');
+
+boton.addEventListener('click', function() {
+    // Al hacer clic, cambia el texto del botón
+    boton.textContent = '¡Gracias por el click!';
+    // Y añade una clase CSS para cambiar el color
+    boton.classList.add('clic-exitoso');
+});</code></pre>
+            <p>⚡ **Tip:** El código JavaScript se coloca idealmente justo antes del cierre de la etiqueta `&lt;/body&gt;` para asegurar que el HTML se haya cargado antes de que el script intente modificarlo.</p>
+        </section>
+
+        <section id="pagina">
+            <h2><i class='bx bx-cube-alt'></i> Creación Web: La Combinación Perfecta</h2>
+            <p>La clave de un sitio web es la **sinergia** entre los tres lenguajes:</p>
+            
+            <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+                <p style="flex: 1; min-width: 250px;">**HTML (Estructura):** Proporciona los elementos, como los contenedores, los textos y los botones. Define *qué* hay en la página.</p>
+                <p style="flex: 1; min-width: 250px;">**CSS (Presentación):** Le da forma, color, fuentes y posicionamiento a esos elementos. Define *cómo* se ve la página.</p>
+                <p style="flex: 1; min-width: 250px;">**JavaScript (Comportamiento):** Hace que los elementos reaccionen (ej: un menú que se desliza o un botón que cambia de color). Define *cómo* funciona la página.</p>
+            </div>
+            
+            <h3>Proceso de Desarrollo Simple</h3>
+            <ol>
+                <li>**Maquetación (HTML):** Escribe toda la estructura de la página primero.</li>
+                <li>**Estilizado (CSS):** Aplica el diseño a esa estructura.</li>
+                <li>**Funcionalidad (JavaScript):** Añade los efectos y la interactividad.</li>
+            </ol>
+            <button onclick="alert('Combinación de los tres elementos: ¡Web funcional lista!')"><i class='bx bx-rocket'></i> Simulación de Resultado Final</button>
+        </section>
+
+        <section id="tips">
+            <h2><i class='bx bx-bulb'></i> Tips y Buenas Prácticas</h2>
+            <p>Sigue estos consejos para escribir código limpio, profesional y mantenible:</p>
+            <ul>
+                <li>**Semántica HTML:** Usa etiquetas con significado (ej: `<nav>`, `<section>`, `<footer>`) en lugar de usar solo `<div>`.</li>
+                <li>**Nombres de Clases Claros:** Usa nombres de clases en CSS que describan el contenido (ej: `header-logo`) y no el estilo (ej: `texto-rojo`).</li>
+                <li>**Diseño Responsivo:** Asegúrate de que tu sitio se vea bien en móviles y tabletas usando media queries en CSS (ej: `@media (max-width: 768px) { ... }`).</li>
+                <li>**Comentarios:** Documenta tu código. Los comentarios explican qué hace una sección compleja y son vitales para el trabajo en equipo.</li>
+                <li>**Usa Consola (JS):** Usa `console.log()` para depurar (encontrar errores) tu código JavaScript.</li>
+            </ul>
+        </section>
+
+        <section id="recursos">
+            <h2><i class='bx bx-link'></i> Recursos y Herramientas</h2>
+            <p>Explora estas herramientas para continuar tu aprendizaje:</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/" target="_blank" style="color: var(--hover); text-decoration: none;">MDN Web Docs:</a> Documentación oficial y completa de todos los estándares web.</li>
+                <li><a href="https://www.w3schools.com/" target="_blank" style="color: var(--hover); text-decoration: none;">W3Schools:</a> Tutoriales y referencias interactivas para practicar código.</li>
+                <li><a href="https://code.visualstudio.com/" target="_blank" style="color: var(--hover); text-decoration: none;">Visual Studio Code:</a> Editor de código gratuito y potente, ideal para desarrollo web.</li>
+                <li><a href="https://boxicons.com/" target="_blank" style="color: var(--hover); text-decoration: none;">Boxicons:</a> (El set de iconos que estamos usando en este manual).</li>
+            </ul>
+        </section>
+
+     
+
+    <footer>
+        <p>© 2025 Manual Web Interactivo | Proyecto Educativo</p>
+    </footer>
+
+    <script>
+        // Función de cambio de tema
+        const toggleTheme = () => {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            btnTema.textContent = isLightMode ? '☀️' : '🌗';
+        };
+        
+        // Asignación de eventos
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        const btnTema = document.getElementById('btnTema');
+        
+        // 1. Menú móvil
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // 2. Scroll suave y cierre de menú móvil
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                // Cierra el menú en móviles después de hacer clic
+                navMenu.classList.remove('active'); 
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // 3. Botón de tema
+        btnTema.addEventListener('click', toggleTheme);
+        
+        // Inicializar el botón de tema según el estado inicial
+        if (document.body.classList.contains('light-mode')) {
+             btnTema.textContent = '☀️';
+        } else {
+             btnTema.textContent = '🌗';
+        }
+    </script>
+</body>
+</html>

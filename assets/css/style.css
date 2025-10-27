@@ -1,0 +1,941 @@
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background-color: black;
+}
+
+a {
+    color: #149ddd;
+}
+
+a:hover {
+    color: #37b3ed;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    right: 15px;
+    bottom: 15px;
+    background: #149ddd;
+    color: #fff;
+    transition: display 0.5s ease-in-out;
+    z-index: 99999;
+}
+
+.back-to-top i {
+    font-size: 24px;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+}
+
+.back-to-top:hover {
+    color: #fff;
+    background: #2eafec;
+    transition: background 0.2s ease-in-out;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 9997;
+    transition: all 0.5s;
+    padding: 0 15px;
+    background: #040b14;
+    overflow-y: auto;
+}
+
+#header {
+    transition: all ease-in-out 0.5s;
+}
+
+#header .profile img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid #2c2f3f;
+}
+
+#header .profile h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .profile h1 a,
+#header .profile h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header .profile .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#header .profile .social-links a:hover {
+    background: #149ddd;
+    color: #fff;
+    text-decoration: none;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+@media (max-width: 1199px) {
+    #header {
+        left: -300px;
+    }
+    #main {
+        margin-left: 0;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+
+/* Desktop Navigation */
+
+.nav-menu {
+    padding-top: 30px;
+}
+
+.nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu>ul>li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-menu a i {
+    font-size: 24px;
+    padding-right: 8px;
+    color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active>a,
+.nav-menu li:hover>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active>a i,
+.nav-menu li:hover>a i {
+    color: #149ddd;
+}
+
+
+/* Mobile Navigation */
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mobile-nav-toggle i {
+    color: #149ddd;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active #header {
+    left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+    color: #fff;
+}
+
+
+/*--------------------------------------------------------------
+# Portada Section
+--------------------------------------------------------------*/
+
+#portada {
+  width: 100%;
+  height: 100vh; /* This makes the section take up the full viewport height */
+  background: url("https://wallpaperaccess.com/full/3358400.jpg") top center; /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  position: relative;
+}
+
+#portada:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text contrast */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#portada .portada-container {
+  position: relative;
+  z-index: 2; /* Brings the text above the overlay */
+  color: #fff; /* Changes text color to white for better visibility */
+  text-align: center;
+}
+
+#portada h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
+#portada p {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#portada p span {
+  color: #fff;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #149ddd; /* You can adjust this color */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 1024px) {
+  #portada {
+    background-attachment: fixed; /* Makes the background image parallax */
+  }
+}
+
+@media (max-width: 768px) {
+  #portada h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #portada p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-bg {
+    background: #f5f8fd;
+}
+
+.section-title {
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: blue;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #149ddd;
+    bottom: 0;
+    left: 0;
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+.about .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #173b6c;
+}
+
+.about .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about .content ul li {
+    padding-bottom: 10px;
+}
+
+.about .content ul i {
+    font-size: 20px;
+    padding-right: 2px;
+    color: #149ddd;
+}
+
+.about .content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Facts
+--------------------------------------------------------------*/
+
+.facts {
+    padding-bottom: 30px;
+}
+
+.facts .count-box {
+    padding: 30px;
+    width: 100%;
+}
+
+.facts .count-box i {
+    display: block;
+    font-size: 44px;
+    color: #149ddd;
+    float: left;
+}
+
+.facts .count-box span {
+    font-size: 48px;
+    line-height: 40px;
+    display: block;
+    font-weight: 700;
+    color: #050d18;
+    margin-left: 60px;
+}
+
+.facts .count-box p {
+    padding: 15px 0 0 0;
+    margin: 0 0 0 60px;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    color: #122f57;
+}
+
+.facts .count-box a {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    color: #122f57;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    transition: ease-in-out 0.3s;
+}
+
+.facts .count-box a:hover {
+    color: #1f5297;
+}
+
+.facts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.facts ul li {
+    padding-bottom: 10px;
+}
+
+.facts ul i {
+    font-size: 20px;
+    padding-right: 2px;
+    color: #149ddd;
+}
+
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+
+.resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #050d18;
+}
+
+.resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #1f5297;
+    position: relative;
+}
+
+.resume .resume-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #050d18;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+    font-size: 16px;
+    background: #e4edf9;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+    padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+    padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+    padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: blak;
+    border: 2px solid #1f5297;
+}
+
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.pro {
+    background-color: blak;
+}
+
+/* ========================================================================= */
+/* ESTILOS CORREGIDOS PARA LA SECCIÓN DE PROYECTOS (MODO OSCURO) */
+/* ========================================================================= */
+
+/* 1. Fondo de la Sección Principal y Títulos */
+.proyectos {
+    /* Fondo oscuro para toda la sección, similar al de tu sidebar */
+    background-color: black; 
+}
+
+/* * NOTA IMPORTANTE: Si usas la clase 'section-bg' en el HTML, 
+ * DEBES eliminarla (QUITAR "section-bg") o el fondo será claro.
+ * Si no puedes eliminarla, usa esto:
+ */
+.section-bg {
+    background-color: blakc !important;
+}
+
+/* Títulos y Párrafos en blanco para que se vean sobre el fondo oscuro */
+.proyectos .section-title h2,
+.proyectos .section-title p {
+    color: white; 
+}
+
+/* 2. Estilos del Contenedor de Proyectos y Filtros */
+
+.proyectos .proyectos-item {
+    margin-bottom: 30px;
+    /* Fondo oscuro para las tarjetas individuales de proyectos */
+    background-color: #040b14; 
+    border-radius: 8px; 
+}
+
+.proyectos #proyectos-filters {
+    margin: 0 auto 35px auto;
+    list-style: none;
+    text-align: center;
+    /* Fondo oscuro para la barra de filtros */
+    background: #040b14; 
+    border-radius: 50px;
+    padding: 2px 15px;
+}
+
+.proyectos #proyectos-filters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    /* Texto de los filtros en color blanco */
+    color: white; 
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para el hover y el filtro activo */
+.proyectos #proyectos-filters li:hover,
+.proyectos #proyectos-filters li.filter-active {
+    color: #149ddd; /* Tu color de acento azul */
+    background-color: transparent; /* Fondo transparente sobre la barra oscura */
+}
+
+.proyectos #proyectos-filters li:last-child {
+    margin-right: 0;
+}
+
+/* 3. Estilos del Efecto Hover (proyectos-wrap) */
+
+.proyectos .proyectos-wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.proyectos .proyectos-wrap::before {
+    content: "";
+    /* Overlay semi-transparente negro para crear contraste sobre cualquier imagen */
+    background: rgba(0, 0, 0, 0.6); 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+    opacity: 0;
+}
+
+.proyectos .proyectos-wrap .proyectos-links {
+    opacity: 1;
+    left: 0;
+    right: 0;
+    bottom: -60px;
+    z-index: 3;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    justify-content: center;
+}
+
+.proyectos .proyectos-wrap .proyectos-links a {
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    /* Usamos tu color de acento azul semi-transparente para los iconos */
+    background: rgba(20, 157, 221, 0.75); 
+    transition: 0.3s;
+    width: 50%;
+}
+
+.proyectos .proyectos-wrap .proyectos-links a:hover {
+    background: rgba(20, 157, 221, 0.95);
+}
+
+.proyectos .proyectos-wrap .proyectos-links a+a {
+    border-left: 1px solid #37b3ed;
+}
+
+.proyectos .proyectos-wrap:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+.proyectos .proyectos-wrap:hover .proyectos-links {
+    opacity: 1;
+    bottom: 0;
+}
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+
+.skills .icon-box {
+    margin-bottom: 20px;
+}
+
+.skills .icon {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: #149ddd;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 1px solid #149ddd;
+}
+
+.skills .icon i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.skills .icon-box:hover .icon {
+    background: #fff;
+}
+
+.skills .icon-box:hover .icon i {
+    color: #149ddd;
+}
+
+.skills .title {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+    background-color: black;
+}
+
+.skills .title a {
+    color: #343a40;
+}
+
+.skills .title a:hover {
+    color: #149ddd;
+}
+
+.skills .description {
+    margin-left: 80px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+
+.breadcrumbs {
+    padding: 40px 0;
+}
+
+.breadcrumbs h2 {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+.breadcrumbs ol li+li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #0e2442;
+    content: "/";
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+    .breadcrumbs ol {
+        display: block;
+    }
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Proyectos Details
+--------------------------------------------------------------*/
+
+/* ========================================================================= */
+/* ESTILOS CORREGIDOS PARA LA SECCIÓN DE PROYECTOS (CARRUSEL) */
+/* (Asegura la misma altura en todas las tarjetas) */
+/* ========================================================================= */
+
+.proyectos {
+    background-color: black;
+    color: white;
+}
+
+/* ... (Mantener estilos anteriores de h2, h3, etc.) ... */
+
+/* 1. Contenedor de Proyectos */
+.proyectos .owl-carousel {
+    display: flex; /* Usamos flexbox para el carrusel para asegurar alineación vertical */
+}
+
+/* 2. Estilo para cada ítem del carrusel (la tarjeta) */
+.proyectos .proyectos-item {
+    background-color: #040b14;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transition: transform 0.3s;
+    height: 400px; /* CLAVE: Asegura que el ítem tome toda la altura disponible */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido de forma vertical */
+}
+
+.proyectos .proyectos-item:hover {
+    transform: translateY(-5px);
+}
+
+.proyectos .proyectos-item img {
+    width: 100%;
+    /* CLAVE: Establece una altura fija para la imagen para que todas sean iguales */
+    height: 200px; 
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+}
+
+/* 3. Información del Proyecto */
+.proyectos .proyectos-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1; /* CLAVE: Permite que el contenedor de info se estire para llenar el espacio */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea el contenido (título/texto/botón) */
+}
+
+.proyectos .proyectos-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #149ddd;
+    margin-bottom: 5px;
+}
+
+.proyectos .proyectos-info p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #cccccc;
+    flex-grow: 1; /* Permite que el párrafo se estire si es necesario */
+}
+
+/* Estilo para el botón (Mantener el botón abajo) */
+.proyectos .proyectos-info .btn-proyecto {
+    margin-top: auto; /* CLAVE: Empuja el botón hacia la parte inferior del contenedor flex */
+    /* ... (resto de estilos de botón) ... */
+    display: inline-block;
+    background: #149ddd; 
+    color: #fff;
+    padding: 6px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+
+/* --- Estilos para MODO CLARO (Light Mode) --- */
+/* (Asegúrate de que estas reglas también mantengan la estructura) */
+
+body.light-mode .proyectos {
+    background-color: #f7f7f7;
+}
+
+body.light-mode .proyectos .proyectos-item {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ... (resto de estilos de modo claro) ... */
+
+/* --- Estilos para MODO CLARO (Light Mode) --- */
+
+body.light-mode .proyectos {
+    background-color: #f7f7f7;
+}
+
+body.light-mode .proyectos h3 {
+    color: #333333;
+}
+
+body.light-mode .proyectos .proyectos-item {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .proyectos .proyectos-info p {
+    color: #666666;
+}
+
+body.light-mode .proyectos .owl-dot {
+    background: #cccccc;
+}
+
+body.light-mode .proyectos .owl-dot.active {
+    background: #149ddd;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    padding: 15px;
+    color: #f4f6fd;
+    font-size: 14px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 9999;
+    background: #040b14;
+}
+
+#footer .copyright {
+    text-align: center;
+}
+
+#footer .credits {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #eaebf0;
+}
+
+@media (max-width: 1199px) {
+    #footer {
+        position: static;
+        width: auto;;
+    }
+}
+
+
+/* ========================================================================= */
+/* ESTILOS DEL BOTÓN "VER PROYECTO" */
+/* ========================================================================= */
+
+.proyectos .proyectos-info .btn-proyecto {
+    display: inline-block;
+    background: #149ddd; /* Color de acento azul */
+    color: #fff;
+    padding: 6px 15px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-decoration: none; /* Asegura que no tenga subrayado */
+}
+
+.proyectos .proyectos-info .btn-proyecto:hover {
+    background: #1c7aab; /* Un tono más oscuro de azul al pasar el ratón */
+    color: #fff;
+}
+
+.proyectos .proyectos-info .btn-proyecto i {
+    margin-left: 5px;
+}
+
+
+/* Estilos del botón en MODO CLARO */
+body.light-mode .proyectos .proyectos-info .btn-proyecto {
+    background: #149ddd;
+    color: #fff;
+}
+
+body.light-mode .proyectos .proyectos-info .btn-proyecto:hover {
+    background: #0f6bb8;
+}

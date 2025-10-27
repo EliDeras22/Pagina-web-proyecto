@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC>
+<HTML> 
+<HEAD> 
+	<TITLE>Formulario de datos personales</TITLE> 
+	<STYLE type="text/css"> 
+	<!-- 
+	BODY {background-color:#5C4033; color:#CCAFAF;
+			text-align: center;
+			} 
+	H1 {text-align:center; font-size:20pt;} 
+	HR {background-color:#CCAFF; text-align: center;} 
+	.input1 {
+    		display: flex;
+    		width: 20px;
+    		height: 20px;
+    		text-align: center;
+
+	}
+	--> 
+
+</STYLE> 
+</HEAD> 
+<BODY >
+	<center>
+	<H1>Datos personales</H1> 
+	<HR size="5">
+	<BR><BR> 
+	Llena el siguiente formulario con los datos que se solicitan, por favor: 
+	<FORM method="POST" action="mailto:materialic2019@gmail.com"
+	enctype="text/plain">
+	<TABLE border="0">
+		<TR> 
+			<TD><B>Nombre: </B></TD>
+		<TD><INPUT type="text" maxlength="20" size="15" name="nombre"></TD> 
+	</TR>
+	<TR>
+		<TD><B>Apellido: </B></TD> 
+		<TD><INPUT type="text" maxlength="20" size="15" name="apellido"></TD> 
+	</TR> 
+	<TR> 
+		<TD><B>Nacionalidad: </B></TD> 
+		<TD> 
+			<SELECT> 
+				<OPTION value="Salvadoreño">Salvadore&ntilde;o(a)
+				<OPTION value="Hondureño">Hondure&ntilde;o(a) 
+				<OPTION	value="Guatemalteco">Guatemalteco(a) 
+				<OPTION value="Costarricense">Costarricense(a)  
+				<OPTION value="Nicaraguense">Nicarag&uuml;ense(a)
+				<OPTION value="Panameño">Paname&ntilde;o(a)
+			</SELECT>
+		</TD>
+	</TR>
+	<TR>
+		<TD><B>Sexo: </B></TD>
+		<TD>
+			<INPUT type="radio" name="sexo" value="mas"checked><B>Masculino</B><br>
+			<INPUT type="radio" name="sexo" value="fem"checked><B>Femenino</B>
+		</TD>
+	</TR> 
+	<TR> 
+		<TD><B>Direcci&oacute;n: </B></TD> 
+		<TD><INPUT type="text" maxlength="40" size="30" name="direccion"></TD> 
+	</TR> 
+	<TR>
+		<TD><B>Tel&eacute; fono: </B></TD> 
+		<TD><INPUT type="text" maxlength="11" size="10". name="telefono"></TD> 
+		<TR> 
+			
+			<TD colspan="2" align="center"> 
+				<div class="input1">
+				<INPUT  type="image" name="botonenviar" src="IMAGENES/send1.png"alt="width="150 height="150" alt="Enviar
+				formulario"> 
+				&nbsp;&nbsp;&nbsp; 
+				<INPUT  type="reset" name="botoncancelar" value="Restablecer"> 
+			</TD> 
+		</div>
+		</TR>
+	</TABLE>
+</FORM>
+</center>
+</BODY>
+</HTML>

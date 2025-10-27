@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créditos del Equipo - Versión Simple</title>
+
+<style>
+  /* ===============================
+     🔤 FUENTE GENERAL Y ESTILO BASE
+     =============================== */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;     /* Fuente limpia y legible */
+    background-color: #1a0d2f;          /* Fondo morado oscuro */
+    color: white;                       /* Texto blanco */
+  }
+
+  /* ===============================
+     🟣 ENCABEZADO (HEADER)
+     =============================== */
+  header {
+    text-align: center;                 /* Centra el texto */
+    padding: 30px;                      /* Espaciado alrededor */
+    background-color: #4b0082;          /* Color morado */
+    position: relative;                 /* Necesario para colocar el nav */
+  }
+
+  header h1 {
+    margin: 0;                          /* Quita espacio extra */
+    font-size: 2em;                     /* Tamaño grande */
+  }
+
+  /* ===============================
+     🧭 MENÚ DE NAVEGACIÓN
+     =============================== */
+  nav {
+    position: absolute;                 /* Permite moverlo dentro del header */
+    top: 15px;                          /* Distancia desde arriba */
+    right: 20px;                        /* Pegado al lado derecho */
+  }
+
+  nav a {
+    text-decoration: none;              /* Sin subrayado */
+    color: #dda0dd;                     /* Color lavanda */
+    font-weight: bold;                  /* Letras más marcadas */
+    background-color: #2e003e;          /* Fondo oscuro */
+    padding: 8px 15px;                  /* Espaciado interno */
+    border-radius: 6px;                 /* Bordes redondeados */
+    transition: 0.3s;                   /* Efecto suave al pasar el ratón */
+  }
+
+  nav a:hover {
+    background-color: #dda0dd;          /* Cambia el fondo */
+    color: #2e003e;                     /* Cambia el color del texto */
+  }
+
+  /* ===============================
+     👥 CONTENEDOR DE MIEMBROS
+     =============================== */
+  .team-container {
+    display: flex;                      /* Alinea los cuadros en fila */
+    justify-content: center;            /* Centra horizontalmente */
+    flex-wrap: wrap;                    /* Permite que bajen si no caben */
+    gap: 30px;                          /* Espacio entre cuadros */
+    margin: 40px;                       /* Espacio con el borde */
+  }
+
+  /* ===============================
+     🟪 CUADRO INDIVIDUAL DE CADA MIEMBRO
+     =============================== */
+  .member {
+    background-color: #2e003e;          /* Fondo morado más oscuro */
+    width: 250px;                       /* Ancho igual para todos */
+    height: 350px;                      /* Alto igual para todos */
+    border-radius: 10px;                /* Bordes redondeados */
+    overflow: hidden;                   /* Oculta lo que se salga */
+    text-align: center;                 /* Centra el texto */
+    cursor: pointer;                    /* Cursor de mano al pasar */
+    transition: 0.3s;                   /* Suaviza los cambios */
+  }
+
+  /* Efecto al pasar el mouse */
+  .member:hover {
+    transform: translateY(-8px);        /* Se eleva un poco */
+    background-color: #3a0053;          /* Se aclara un poco */
+  }
+
+  /* ===============================
+     🖼️ IMAGEN DEL MIEMBRO
+     =============================== */
+  .photo {
+    width: 100%;                        /* Toma todo el ancho del cuadro */
+    height: 180px;                      /* Altura fija (espacio para imagen) */
+    background-color: #4b0082;          /* Fondo morado si no hay imagen */
+    background-size: cover;             /* Ajusta la imagen sin deformarla */
+    background-position: center;        /* Centra la imagen */
+    border-bottom: 3px solid #dda0dd;   /* Línea decorativa inferior */
+  }
+
+  /* ===============================
+     💬 NOMBRE DEL MIEMBRO
+     =============================== */
+  .bio h2 {
+    margin: 20px 0 0 0;                 /* Espaciado arriba */
+    font-size: 1.3em;                   /* Tamaño mediano */
+    color: #dda0dd;                     /* Color lavanda */
+  }
+
+  /* ===============================
+     🪟 MODAL (CUADRO EMERGENTE)
+     =============================== */
+  .modal {
+    display: none;                      /* Oculto por defecto */
+    position: fixed;                    /* Fijo en toda la pantalla */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);  /* Fondo oscuro transparente */
+  }
+
+  .modal-content {
+    background-color: #2e003e;          /* Fondo del cuadro */
+    margin: 10% auto;                   /* Centrado vertical/horizontal */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .close {
+    float: right;                       /* Mueve la “X” a la esquina */
+    font-size: 24px;
+    cursor: pointer;
+    color: #dda0dd;                     /* Color lavanda */
+  }
+
+  .close:hover {
+    color: white;                       /* Cambia a blanco al pasar el mouse */
+  }
+
+</style>
+</head>
+
+<body>
+
+  <!-- ===============================
+       🟣 ENCABEZADO PRINCIPAL
+       =============================== -->
+  <header>
+    <h1>Créditos del Equipo</h1>
+
+    <!-- 🔗 Navegación: solo enlace a la página de inicio -->
+    <nav>
+      <a href="file:///C:/Users/Eli%20Deras/Desktop/HTML%20LUIS%20MARIO/ASTROS.html#">Inicio</a>
+    </nav>
+  </header>
+
+  <!-- ===============================
+       👥 SECCIÓN DE MIEMBROS
+       =============================== -->
+  <div class="team-container">
+
+    <!-- MIEMBRO 1 -->
+    <div class="member" onclick="showBio('Eli Deras', 'Experto en diseño gráfico, programación en páginas web, con la capacidad de manejar programas y lenguajes como: HTML, CSS, CSHARP, Photoshop, Macromedia, Photopea, PowerPoint, Word, etc.')">
+      <div class="photo" style="background-image: url('IMAGENES/avatar.png');"></div>
+      <div class="bio">
+        <h2>Eduardo Deras</h2>
+      </div>
+    </div>
+
+    <!-- MIEMBRO 2 -->
+    <div class="member" onclick="showBio('Sahara Saravia', 'Experta en diseño, experta en la decoración de páginas web con la capacidad de hacer que las páginas tengan una apariencia llamativa y decorativa.')">
+      <div class="photo" style="background-image: url('IMAGENES/mujer.png');"></div>
+      <div class="bio">
+        <h2>Sahara Saravia</h2>
+      </div>
+    </div>
+
+    <!--  MIEMBRO 3 -->
+    <div class="member" onclick="showBio('Miriam Arevalos', 'Experta en páginas web, diseño y planificación de páginas y programas sencillos en C-Sharp.')">
+      <div class="photo" style="background-image: url('IMAGENES/mujer.png');"></div>
+      <div class="bio">
+        <h2>Miriam Arevalos</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===============================
+       🪟 MODAL (VENTANA DE INFORMACIÓN)
+       =============================== -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-name"></h2>
+      <p id="modal-bio"></p>
+    </div>
+  </div>
+
+  <!-- ===============================
+       ⚙️ SCRIPT (FUNCIONALIDAD)
+       =============================== -->
+  <script>
+    // 📖 Función que muestra la biografía en el modal
+    function showBio(nombre, texto) {
+      document.getElementById('modal-name').innerText = nombre;  // Inserta el nombre
+      document.getElementById('modal-bio').innerText = texto;    // Inserta la descripción
+      document.getElementById('modal').style.display = 'block';  // Muestra el modal
+    }
+
+    // ❌ Función para cerrar el modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // 💡 Cierra el modal si se hace clic fuera del cuadro
+    window.onclick = function(event) {
+      let modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

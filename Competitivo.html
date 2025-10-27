@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitivo Pokémon</title>
+    <!-- Desarrollado por NIE4211940 -->
+  <style>
+    :root {
+      --bg-dark: #1e1e2f;
+      --text-light: #f0f0f0;
+      --primary: #1abc9c;
+      --accent: #e74c3c;
+      --hover: #2c3e50;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5em;
+    }
+
+    .pokemon-card {
+      background-color: #2b2b3c;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .pokemon-card img {
+      width: 96px;
+      height: 96px;
+    }
+
+    .pokemon-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .pokemon-data {
+      flex-grow: 1;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c0392b;
+    }
+
+    .extra-info {
+      display: none;
+      margin-top: 10px;
+      color: var(--text-light);
+      background-color: #353546;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guía Competitiva Pokémon</h1>
+    
+  </header>
+
+  <div class="pokemon-card">
+    <div class="pokemon-info">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png" alt="Hydreigon">
+      <div class="pokemon-data">
+        <h2>Hydreigon</h2>
+        <p>Tipo: Siniestro / Dragón</p>
+        <p>Rol: Special Attacker</p>
+        <p>Movimiento clave: Draco Meteor</p>
+        <button onclick="toggleInfo(this)">Ver ventajas</button>
+        <p class="extra-info">Hydreigon es fuerte contra tipos Psíquico y Fantasma</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokemon-card">
+    <div class="pokemon-info">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png" alt="Tyranitar">
+      <div class="pokemon-data">
+        <h2>Tyranitar</h2>
+        <p>Tipo: Roca / Siniestro</p>
+        <p>Rol: Tank / Stealth Rock Setter</p>
+        <p>Movimiento clave: Stealth Rock</p>
+        <button onclick="toggleInfo(this)">Ver ventajas</button>
+        <p class="extra-info">Tyranitar puede resistir muchos ataques y colocar rocas trampa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokemon-card">
+    <div class="pokemon-info">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png" alt="Blaziken">
+      <div class="pokemon-data">
+        <h2>Blaziken</h2>
+        <p>Tipo: Fuego / Lucha</p>
+        <p>Rol: Physical Sweeper</p>
+        <p>Movimiento clave: Speed Boost + Swords Dance</p>
+        <button onclick="toggleInfo(this)">Ver ventajas</button>
+        <p class="extra-info">Blaziken puede barrer equipos con su habilidad Speed Boost.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokemon-card">
+    <div class="pokemon-info">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png" alt="Swampert">
+      <div class="pokemon-data">
+        <h2>Swampert</h2>
+        <p>Tipo: Agua / Tierra</p>
+        <p>Rol: Stealth Rock Setter / Tank</p>
+        <p>Movimiento clave: Earthquake</p>
+        <button onclick="toggleInfo(this)">Ver ventajas</button>
+        <p class="extra-info">Swampert es excelente para detener atacantes eléctricos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pokemon-card">
+    <div class="pokemon-info">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png" alt="Metagross">
+      <div class="pokemon-data">
+        <h2>Metagross</h2>
+        <p>Tipo: Acero / Psíquico</p>
+        <p>Rol: Bulky Attacker</p>
+        <p>Movimiento clave: Meteor Mash</p>
+        <button onclick="toggleInfo(this)">Ver ventajas</button>
+        <p class="extra-info">Metagross tiene buena defensa y un gran ataque.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(button) {
+      const info = button.nextElementSibling;
+      if (info.style.display === 'block') {
+        info.style.display = 'none';
+      } else {
+        info.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

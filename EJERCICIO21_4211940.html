@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Desarrollado por NIE4211940 -->
+  <title>Región Hoenn - Pokémon</title>
+    <!-- Desarrollado por NIE4211940 -->
+  <style>
+    :root {
+      --bg-dark: #1e1e1e;
+      --bg-light: #2c2c2c;
+      --text-light: #f0f0f0;
+      --primary: #4caf50;
+      --accent: #03a9f4;
+    }
+
+    body {
+
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: var(--bg-light);
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .menu a, .menu button {
+      color: white;
+      text-decoration: none;
+      background-color: var(--accent);
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      min-width: 150px;
+      top: 45px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      background-color: var(--bg-light);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background-color: var(--accent);
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #555;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #2e2e2e;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3a3a3a;
+      color: white;
+    }
+
+    input[type="submit"] {
+      background-color: var(--primary);
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .menu {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/2560px-International_Pokémon_logo.svg.png" alt="Logo Pokémon"/>
+    <h1>Región Hoenn</h1>
+  </header>
+
+  <nav>
+    <div class="menu">
+      <a href="file:///C:/Users/Eli%20Deras/Desktop/Web-master/EJERCICIO21_4211940.html">Inicio</a>
+      <a href="file:///C:/Users/Eli%20Deras/Desktop/Web-master/Competitivo.html">Competitivo</a>
+      <a href="file:///C:/Users/Eli%20Deras/Desktop/Web-master/Pokedex.html">Pokedex</a>
+      <a href="file:///C:/Users/Eli%20Deras/Desktop/Web-master/Legendarios.html">Legendarios</a>
+      <div class="dropdown">
+        <button>Más</button>
+        <div class="dropdown-content">
+          <a href="#Historia De La Region">Historia</a>
+          <a href="#tabla">Tabla</a>
+          <a href="#tabs">Exploracion</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="historia De La Region">
+      <h2>Historia</h2>
+      <p>La región de Hoenn es una de las zonas más fascinantes y diversas del mundo Pokémon. Situada al suroeste de Kanto y Johto, esta región se caracteriza por su amplia variedad de climas, paisajes y especies. Desde densos bosques tropicales hasta áridos desiertos, desde altas cadenas montañosas hasta extensas rutas marítimas, Hoenn ofrece un ecosistema único que ha permitido el desarrollo de una gran cantidad de Pokémon autóctonos. Pero más allá de su geografía, Hoenn también es una tierra marcada por mitos ancestrales y acontecimientos históricos que han dado forma a su identidad.</p>
+
+<p>Según las leyendas de la región, en tiempos antiguos existían dos fuerzas primordiales que representaban aspectos opuestos de la naturaleza: Groudon, el titán de la tierra, y Kyogre, el señor de los mares. Se dice que ambos Pokémon emergieron en el pasado para expandir sus respectivos dominios, lo que dio lugar a una intensa batalla por el control del mundo natural. Groudon hizo surgir continentes y montañas, mientras que Kyogre elevó los océanos, provocando tormentas y marejadas. Esta confrontación amenazó con destruir la región, desatando un caos climático sin precedentes.</p>
+
+<p>Ante tal catástrofe, desde lo alto del cielo descendió Rayquaza, un dragón legendario que habitaba la atmósfera. Rayquaza, con su imponente presencia y poder, logró calmar a las bestias en conflicto, poniendo fin a la destrucción y restaurando el equilibrio natural. Este evento marcó un antes y un después en la historia de Hoenn, y desde entonces, los habitantes han venerado a estos tres Pokémon como deidades guardianas, construyendo templos, santuarios y relatos que han perdurado por generaciones. A lo largo de los siglos, Hoenn ha sido escenario de múltiples exploraciones y avances tecnológicos, combinando la tradición con la modernidad. Las ciudades costeras como Ciudad Portual y ciudad Algaria se convirtieron en centros de comercio y conocimiento, mientras que regiones más remotas, como el Monte Pírico o la Caverna Abisal, se mantuvieron como puntos clave de misterio y espiritualidad. Además, el conflicto entre los equipos villanos Aqua y Magma, cada uno buscando despertar a Kyogre o Groudon para sus propios fines, volvió a poner a prueba el delicado equilibrio de la región en tiempos recientes. Una vez más, el coraje de jóvenes entrenadores y el poder de Rayquaza fueron esenciales para evitar una catástrofe.</p>
+
+<p>Hoy en día, Hoenn es vista como una región que honra sus raíces mitológicas y su relación con la naturaleza. Los entrenadores que viajan por sus caminos no solo buscan conquistar gimnasios y competir en la Liga Pokémon, sino también descubrir los secretos de su historia, respetar la convivencia con las criaturas que habitan el lugar y entender el verdadero significado del equilibrio entre tierra, mar y cielo.
+
+<section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <h2 style="color: #fff; margin-bottom: 20px;">Mapa de la Región Hoenn</h2>
+  <img src="imagenes/mapa.png" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+
+
+</p>
+    </section>
+
+    <section id="lugares">
+      <h2>Lugares Destacados</h2>
+      <ul>
+        <li><h2>Monte Cenizo</h2></li>
+        <p> El Monte Cenizo es un imponente volcán activo situado entre las rutas 112 y 113 en la región de Hoenn. Su entorno está cubierto por una constante lluvia de ceniza volcánica, lo que le da una atmósfera única y misteriosa. Este lugar es reconocido tanto por su actividad geológica como por su importancia en la historia regional. A lo largo de sus laderas y senderos, los entrenadores pueden encontrar una variedad de Pokémon de tipo Fuego y otros que se han adaptado a las condiciones hostiles del terreno, como Slugma, Numel, Machop, Spoink, y ocasionalmente Koffing. Además, el Monte Cenizo juega un papel crucial en los eventos que involucran a los equipos villanos Magma y Aqua, ya que en su cima se encuentra uno de los lugares clave donde el equipo Magma intenta despertar al legendario Groudon usando una Esfera Roja. Este intento desequilibra el clima y pone en riesgo la región entera, lo que desencadena una serie de acontecimientos dramáticos que el jugador debe ayudar a resolver. Más allá de su relevancia en la historia, el Monte Cenizo también es un sitio de interés para los investigadores Pokémon debido a sus extrañas condiciones ambientales y a la presencia de especies únicas que difícilmente se encuentran en otras zonas de Hoenn. <p>
+          <section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/cenizo.png" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+
+        <li><h2>Ciudad Portual</h2></li>
+        <p>Ciudad Portual es una vibrante metrópolis costera ubicada al sur de la región Hoenn, reconocida por su bullicioso puerto, su ambiente turístico y su importancia comercial. Esta ciudad es un punto de encuentro crucial para entrenadores, investigadores, comerciantes y navegantes que cruzan las rutas marítimas de Hoenn. Uno de sus lugares más destacados es el Astillero de Dock, donde se construyen embarcaciones y donde trabaja el renombrado Capitán Babor, pieza clave en el desarrollo de la historia principal del juego. También alberga el Museo Oceanográfico, un centro de divulgación científica dedicado a la vida marina y la preservación del océano, que es intervenido brevemente por el equipo Aqua durante su intento de expandir los mares. Además, Ciudad Portual cuenta con un animado mercado al aire libre, donde los visitantes pueden encontrar desde Poké Muñecos hasta hierbas y pociones raras. En las cercanías, se pueden encontrar Pokémon acuáticos como Wingull, Tentacool, Magikarp y Pelipper, ideales para entrenadores que se especializan en combates marítimos. Esta ciudad no solo destaca por su función como nodo logístico y científico, sino también por su encanto cultural, su calidez humana y su papel central en las aventuras que se desarrollan a lo largo de la región de Hoenn.
+
+</p>
+        <section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/portu.png" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+        <li><h2>Pueblo Lavacalda</h2></li>
+        <p>Pueblo Lavacalda es una apacible comunidad montañosa situada en las laderas del imponente Monte Cenizo. Es conocido por ser el lugar más alto habitado de toda la región Hoenn, lo que le otorga un ambiente fresco y tranquilo, ideal para el descanso. Su principal atractivo son las aguas termales naturales que fluyen desde el interior del volcán, utilizadas por los lugareños y visitantes como baños termales para relajarse y revitalizarse. Esta tradición ancestral convierte a Lavacalda en un destino turístico muy apreciado dentro del mundo Pokémon. El diseño del pueblo refleja una fusión entre la armonía natural y la vida sencilla, con casas de madera, caminos de piedra y jardines bien cuidados. Aunque no es un centro de combate como otras ciudades, sí cumple un papel importante en la historia de Hoenn, ya que se encuentra cerca de rutas clave como la 112 y la 113, y es un paso obligatorio para entrenadores que se dirigen al Monte Cenizo o que recorren la zona central de la región. En sus alrededores, los entrenadores pueden encontrar Pokémon como Spoink, Machop, Slugma y Numel, adaptados al terreno montañoso y volcánico. Pueblo Lavacalda representa un remanso de paz en medio de la intensa aventura, y su hospitalidad lo convierte en uno de los lugares más entrañables para los entrenadores en su viaje por Hoenn.</p>
+        <section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/lava.png" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+      </ul>
+  
+   <section id="tabla">
+  <h2>Tabla de Gimnasios de Hoenn</h2>
+  <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr>
+        <th>Ciudad</th>
+        <th>Líder</th>
+        <th>Tipo</th>
+        <th>Pokémon del Líder</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ciudad Férrica</td>
+        <td>Petra</td>
+        <td>Roca</td>
+        <td>Geodude, Nosepass</td>
+      </tr>
+      <tr>
+        <td>Pueblo Azuliza</td>
+        <td>Marcial</td>
+        <td>Lucha</td>
+        <td>Machop, Makuhita</td>
+      </tr>
+      <tr>
+        <td>Ciudad Lavacalda</td>
+        <td>Candela</td>
+        <td>Fuego</td>
+        <td>Numel, Slugma, Torkoal</td>
+      </tr>
+      <tr>
+        <td>Ciudad Arborada</td>
+        <td>Erico</td>
+        <td>Eléctrico</td>
+        <td>Voltorb, Electrike, Magneton, Manectric</td>
+      </tr>
+      <tr>
+        <td>Ciudad Petalia</td>
+        <td>Norman</td>
+        <td>Normal</td>
+        <td>Slaking, Vigoroth, Slaking</td>
+      </tr>
+      <tr>
+        <td>Ciudad Algaria</td>
+        <td>Alana</td>
+        <td>Volador</td>
+        <td>Swablu, Tropius, Pelipper, Skarmory, Altaria</td>
+      </tr>
+      <tr>
+        <td>Arrecípolis</td>
+        <td>Galano</td>
+        <td>Agua</td>
+        <td>Luvdisc, Whiscash, Sealeo, Seaking, Milotic</td>
+      </tr>
+      <tr>
+        <td>Ciudad Colosalia</td>
+        <td>Pluvio</td>
+        <td>Psíquico</td>
+        <td>Claydol, Xatu, Lunatone, Solrock</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+
+    <section id="tabs">
+      <h2>Explora Más de Hoenn</h2>
+
+      <div class="tabs">
+        <button class="tab-btn" onclick="showTab('flora')">Flora</button>
+        <button class="tab-btn" onclick="showTab('fauna')">Fauna</button>
+        <button class="tab-btn" onclick="showTab('eventos')">Eventos</button>
+      </div>
+      <div class="tab-content" id="flora">
+        <p>La región de Hoenn destaca por su diversidad ecológica, la cual se refleja en su abundante y variada flora. Desde densos bosques tropicales y humedales hasta áreas montañosas y costeras, Hoenn alberga una gran variedad de plantas que no solo embellecen el paisaje, sino que también forman un ecosistema vital para los Pokémon y humanos que habitan la región. Entre las plantas más características se encuentran los grandes árboles frondosos de los bosques de Petalia y Ciudad Arborada, que ofrecen refugio a numerosas especies de Pokémon. Además, los manglares y las áreas pantanosas, como las que rodean el Pantano Pétreo, son hogar de especies únicas adaptadas a ambientes húmedos y ricos en nutrientes. La región también es famosa por sus flores exóticas y frutos especiales, algunos con propiedades curativas utilizadas en las pociones y remedios tradicionales. Esta conexión entre la flora y la fauna contribuye a la riqueza natural de Hoenn, convirtiéndola en un lugar donde el respeto por la naturaleza y el equilibrio ecológico son fundamentales para la vida diaria y para las aventuras de los entrenadores que la recorren.</p>
+           <section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/flore.jpg" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+      </div>
+      <div class="tab-content" id="fauna">
+        <p>La fauna de Hoenn es una de las más ricas y diversas del mundo Pokémon, gracias a la gran variedad de ecosistemas presentes en la región. Desde Pokémon que habitan en los bosques, como Beautifly, Shroomish o Zigzagoon, hasta criaturas marinas como Wailmer, Sharpedo o Luvdisc, cada hábitat alberga especies únicas adaptadas a su entorno. En las zonas montañosas como el Monte Cenizo pueden encontrarse Pokémon como Numel y Torkoal, mientras que en las rutas submarinas nadan especies como Relicanth y Clamperl, que reflejan la conexión ancestral de la región con el océano. En los cielos de Hoenn, Pokémon como Swablu, Altaria y Wingull sobrevuelan las costas y las ciudades, completando el equilibrio entre tierra, mar y aire. La presencia de tantos Pokémon variados no solo resalta la riqueza de la fauna regional, sino también el profundo vínculo entre la vida salvaje y las comunidades humanas, que conviven y respetan la biodiversidad como parte de su cultura y tradiciones.</p>
+           <section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/poke.jpg" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+      </div>
+      <div class="tab-content" id="eventos">
+        <p>Los eventos que ocurren a lo largo de la aventura en la región Hoenn son fundamentales para la historia y el desarrollo del mundo Pokémon. Desde el inicio del viaje del protagonista como entrenador novato, Hoenn se convierte en el escenario de conflictos entre los equipos villanos Magma y Aqua, quienes buscan alterar el equilibrio natural al despertar a los legendarios Groudon y Kyogre, respectivamente. Estas acciones provocan catástrofes climáticas que amenazan con destruir la región, y que el jugador debe detener aliándose con personajes clave como el Profesor Abedul y el Campeón Máximo Peñas. Además de esta trama principal, Hoenn también ofrece eventos memorables como la participación en concursos Pokémon, la exploración del Monte Cenizo, la navegación por rutas marítimas hasta Arrecípolis y el desafío de la Liga Pokémon en la Calle Victoria. En Pokémon Esmeralda, se suma la amenaza de Rayquaza, quien debe intervenir para detener la batalla entre Groudon y Kyogre, dando lugar a uno de los momentos más épicos de toda la saga. Estos eventos no solo marcan el ritmo del juego, sino que también profundizan el sentido de aventura, exploración y responsabilidad que caracteriza al viaje de todo entrenador Pokémon.</p>
+         
+
+
+<section id="imagen-hoenn" style="padding: 20px; text-align: center; background-color: #1f1f1f;">
+  <img src="imagenes/kyo.png" alt="Mapa de Hoenn"
+       style="
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+         max-height: 500px;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+       ">
+</section>
+      </div>
+    </section>
+  </main>
+
+
+<center>
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+      document.getElementById(tabId).classList.add("active");
+    }
+
+    showTab("flora");
+  </script>
+  <section id="formulario">
+      <h2>Formulario de  Contacto para mas Informacion</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <textarea placeholder="¿Que mas quieres saber?..." rows="4"></textarea>
+        <input type="submit" value="Enviar" />
+      </form>
+    </section>
+</center>
+
+
+
+</body>
+</html>
